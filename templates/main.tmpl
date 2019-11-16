@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{ SITE_TAGLINE }}">
+    <title>{{ SITE_TITLE }} - {% block listing_once %}{{ SITE_TAGLINE }}{% endblock %}{% block entry %}{{ DOMAIN }}/{{ FILENAME }}{% endblock %}</title>
+    {%- block entry %}
+    {%- if HOSTING == "github" %}
+    <meta name="go-import" content="{{ DOMAIN }}/{{ FILENAME }} git https://github.com/{{ SLUG }}">
+    <meta name="go-source" content="{{ DOMAIN }}/{{ FILENAME }} https://github.com/{{ SLUG }} https://github.com/{{ SLUG }}/tree/master{/dir} https://github.com/{{ SLUG }}/tree/master{/dir}/{file}#L{line}">
+    {%- endif %}
+    <meta http-equiv="refresh" content="0; url=https://godoc.org/{{ DOMAIN }}/{{ FILENAME }}">
+    {%- endblock %}
+  </head>
+  <body>
+    {%- block listing_once %}
+    <h1>{{ SITE_TITLE }}</h1>
+    <h2>{{ SITE_TAGLINE }}</h2>
+    <ul>
+    {%- endblock %}
+    {%- block listing %}
+      <li><a href="/{{ FILENAME }}/"><strong>{{ DOMAIN }}/{{ FILENAME }}</strong></a></li>
+    {%- endblock %}
+    {%- block listing_once %}
+    </ul>
+    {%- endblock %}
+    {%- block entry %}
+    Nothing to see here. <a href="https://godoc.org/{{ DOMAIN }}/{{ FILENAME }}">Move along!</a>
+    {%- endblock %}
+  </body>
+</html>

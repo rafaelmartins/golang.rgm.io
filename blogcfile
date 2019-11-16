@@ -1,0 +1,16 @@
+[global]
+AUTHOR_NAME = Rafael G. Martins
+AUTHOR_EMAIL = rafael@rafaelmartins.eng.br
+SITE_TITLE = golang.rgm.io
+SITE_TAGLINE = @rafaelmartins' golang namespace
+BASE_DOMAIN = https://golang.rgm.io
+DOMAIN = golang.rgm.io
+
+[settings]
+locale = en_US.utf8
+post_prefix =
+posts_per_page = -1
+atom_posts_per_page = 0
+
+[posts]
+dwtk
