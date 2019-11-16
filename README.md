@@ -3,14 +3,16 @@ My golang namespace.
 
 ### Example nginx configuration block
 
-  server {
-      ...
+```
+server {
+    ...
 
-      location / {
-          try_files $uri $uri/ @redir;
-      }
+    location / {
+        try_files $uri $uri/ @redir;
+    }
 
-      location @redir {
-          rewrite ^/([a-zA-Z0-9_-]+)/.+$ /$1/;
-      }
-  }
+    location @redir {
+        rewrite ^/([a-zA-Z0-9_-]+)/.+$ /$1/;
+    }
+}
+```
